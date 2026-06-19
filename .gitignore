@@ -1,0 +1,13 @@
+# Qt / Quickshell caches
+*.qmlc
+*.jsc
+.qmlcache/
+
+# editor / OS junk
+*.swp
+*~
+.DS_Store
+
+# runtime scratch the menus write
+.wifi-menu-list
+.conn-menu-list

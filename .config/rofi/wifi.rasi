@@ -1,0 +1,88 @@
+/* Skeletor glass rofi — Wi-Fi menu. Palette sampled from the wallpaper:
+   blue-black #0A090E, deep violet #282652, electric blue #3F549D, lavender-silver #9E9EBE.
+   Low alphas so the Hyprland compositor blur (layerrule) frosts behind it. */
+configuration {
+    /* single left-click activates the hovered row (default needs a double-click) */
+    me-select-entry: "";
+    me-accept-entry: [ "MousePrimary" ];
+}
+
+* {
+    bg-glass:  rgba(10, 9, 14, 0.44);     /* blue-black, compositor blur shows through */
+    bg-cell:   rgba(40, 38, 82, 0.40);    /* deep violet #282652 */
+    bg-sel:    rgba(63, 84, 157, 0.60);   /* electric blue #3F549D */
+    fg0:       #d7d8ea;
+    fg-dim:    #7d828d;
+    silver:    #9e9ebe;                   /* lavender-silver */
+    accent:    #8aa0ff;                   /* electric blue-violet glow */
+
+    background-color: transparent;
+    text-color:       @fg0;
+    font:             "Noto Sans Mono 12";
+}
+
+window {
+    width:            480px;
+    border:           1px;
+    border-color:     @silver;
+    border-radius:    13px;
+    background-color: @bg-glass;
+    padding:          14px;
+}
+
+mainbox {
+    spacing: 10px;
+}
+
+inputbar {
+    background-color: @bg-cell;
+    border:           1px;
+    border-color:     @accent;
+    border-radius:    9px;
+    padding:          8px 12px;
+    spacing:          8px;
+    children:         [ prompt, entry ];
+}
+
+prompt {
+    text-color: @accent;
+}
+
+entry {
+    placeholder:       "select network...";
+    placeholder-color: @fg-dim;
+}
+
+listview {
+    lines:        9;
+    spacing:      6px;
+    scrollbar:    true;
+    fixed-height: false;
+}
+
+scrollbar {
+    width:            4px;
+    handle-width:     4px;
+    handle-color:     @accent;
+    background-color: rgba(40, 38, 82, 0.30);
+    border-radius:    4px;
+}
+
+element {
+    padding:          9px 12px;
+    border-radius:    9px;
+    background-color: @bg-cell;
+    border:           1px 1px 1px 3px;
+    border-color:     rgba(138, 160, 255, 0.35);   /* electric-blue left accent */
+}
+
+element selected {
+    background-color: @bg-sel;
+    border-color:     @accent;
+    text-color:       #eef0ff;
+}
+
+element-text {
+    background-color: transparent;
+    text-color:       inherit;
+}

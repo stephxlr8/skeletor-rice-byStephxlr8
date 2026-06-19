@@ -1,0 +1,110 @@
+{
+    "layer": "top",
+    "position": "bottom",
+    "output": "eDP-1",
+    "height": 38,
+    "margin-left": 14,
+    "margin-right": 14,
+    "margin-bottom": 8,
+    "spacing": 6,
+    "exclusive": true,
+    "modules-left": [
+        "hyprland/workspaces"
+    ],
+    "modules-center": [],
+    "modules-right": [
+        "idle_inhibitor",
+        "temperature",
+        "backlight",
+        "pulseaudio",
+        "network",
+        "battery",
+        "tray",
+        "clock",
+        "custom/power"
+    ],
+    "hyprland/workspaces": {
+        "format": "{name}",
+        "on-click": "activate",
+        "sort-by-number": true,
+        "persistent-workspaces": {
+            "*": 10
+        }
+    },
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
+        },
+        "tooltip-format-activated": "Keep awake: ON",
+        "tooltip-format-deactivated": "Keep awake: OFF"
+    },
+    "temperature": {
+        "interval": 5,
+        "thermal-zone": 0,
+        "critical-threshold": 82,
+        "format": " {temperatureC}°",
+        "format-critical": " {temperatureC}°",
+        "tooltip": false,
+        "on-click": "hyprctl dispatch exec \"[float;size 760 460;center] kitty --class sysmenu -e htop\""
+    },
+    "backlight": {
+        "format": " {percent}%",
+        "scroll-step": 5,
+        "on-scroll-up": "brightnessctl set 5%+",
+        "on-scroll-down": "brightnessctl set 5%-"
+    },
+    "pulseaudio": {
+        "format": " {volume}%",
+        "format-muted": "",
+        "scroll-step": 5,
+        "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+        "on-click-right": "pavucontrol",
+        "tooltip-format": "{desc} — {volume}%"
+    },
+    "network": {
+        "interval": 5,
+        "format-wifi": " {signalStrength}%",
+        "format-ethernet": "",
+        "format-disconnected": "",
+        "tooltip-format": "{ifname} {ipaddr}",
+        "tooltip-format-wifi": "{essid} ({signalStrength}%)",
+        "on-click": "~/.config/hypr/scripts/wifi-menu.sh",
+        "on-click-right": "kitty -e nmtui"
+    },
+    "battery": {
+        "interval": 10,
+        "format": "{icon} {capacity}%",
+        "format-charging": " {capacity}%",
+        "format-plugged": " {capacity}%",
+        "format-full": " {capacity}%",
+        "format-icons": [
+            "",
+            "",
+            "",
+            "",
+            ""
+        ],
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "tooltip-format": "{timeTo}  ({power}W)"
+    },
+    "tray": {
+        "icon-size": 16,
+        "spacing": 8
+    },
+    "custom/power": {
+        "format": "",
+        "tooltip-format": "Click: logout\nRight: shutdown\nMiddle: reboot",
+        "on-click": "hyprctl dispatch exit",
+        "on-click-right": "systemctl poweroff",
+        "on-click-middle": "systemctl reboot"
+    },
+    "clock": {
+        "format": " {:%H:%M  %a %d %b}",
+        "tooltip-format": "<tt>{calendar}</tt>"
+    }
+}

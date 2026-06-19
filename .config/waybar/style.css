@@ -1,0 +1,140 @@
+/* Skeletor glossy-glass bar — wallpaper tones: blue-black, electric violet, cyan, red */
+* {
+    font-family: "Symbols Nerd Font Mono", "Noto Sans Mono", monospace;
+    font-size: 14px;
+    font-weight: bold;
+    min-height: 0;
+}
+
+window#waybar {
+    background: transparent;
+}
+
+/* glass slab — blue-violet tint, strong top gloss, violet+red glow (blur is on) */
+.modules-left,
+.modules-center,
+.modules-right {
+    background: linear-gradient(to bottom,
+        rgba(46, 50, 92, 0.44),
+        rgba(22, 24, 50, 0.40),
+        rgba(10, 12, 26, 0.52));
+    border: 1px solid rgba(150, 162, 214, 0.65);
+    border-radius: 12px;
+    padding: 0 6px;
+    margin: 2px 0;
+    box-shadow: inset 0 1.5px 0 rgba(255, 255, 255, 0.28),
+                inset 0 -10px 16px rgba(90, 70, 190, 0.18),
+                inset 0 0 0 1px rgba(8, 8, 18, 0.6),
+                0 0 10px rgba(120, 92, 255, 0.40),
+                0 0 16px rgba(220, 40, 60, 0.20);
+}
+
+#workspaces button,
+#idle_inhibitor,
+#temperature,
+#backlight,
+#pulseaudio,
+#network,
+#bluetooth,
+#battery,
+#tray,
+#clock,
+#custom-power {
+    color: #dfe4ff;
+    padding: 0 9px;
+    margin: 3px 2px;
+    border-radius: 8px;
+    background: linear-gradient(to bottom,
+        rgba(70, 78, 140, 0.42),
+        rgba(28, 30, 60, 0.36),
+        rgba(14, 15, 30, 0.40));
+    border: 1px solid rgba(130, 140, 200, 0.5);
+    box-shadow: inset 0 1.5px 0 rgba(255, 255, 255, 0.22),
+                inset 0 -4px 8px rgba(70, 55, 160, 0.15);
+}
+
+/* glossy hover — brighter, cyan-violet lit edge */
+#idle_inhibitor:hover,
+#temperature:hover,
+#backlight:hover,
+#pulseaudio:hover,
+#network:hover,
+#bluetooth:hover,
+#battery:hover,
+#clock:hover,
+#custom-power:hover {
+    border-color: #9fd0ff;
+    background: linear-gradient(to bottom,
+        rgba(96, 104, 180, 0.55),
+        rgba(40, 42, 80, 0.48));
+    color: #f3f6ff;
+    box-shadow: inset 0 1.5px 0 rgba(255, 255, 255, 0.30),
+                0 0 8px rgba(120, 160, 255, 0.55);
+}
+
+/* electric icon glow */
+#idle_inhibitor, #temperature, #backlight, #pulseaudio,
+#network, #bluetooth, #battery {
+    text-shadow: 0 0 6px rgba(110, 130, 255, 0.55);
+}
+
+#workspaces button {
+    background: rgba(18, 20, 40, 0.40);
+    color: #7a80a8;
+    min-width: 18px;
+}
+#workspaces button:hover {
+    background: rgba(80, 88, 160, 0.45);
+    color: #eaf0ff;
+    border-color: rgba(160, 200, 255, 0.7);
+}
+#workspaces button.active {
+    background: linear-gradient(to bottom,
+        rgba(150, 110, 255, 0.6),
+        rgba(70, 45, 150, 0.6));
+    color: #ffffff;
+    border-color: #c4b3ff;
+    box-shadow: inset 0 1.5px 0 rgba(255, 255, 255, 0.30),
+                0 0 9px rgba(150, 100, 255, 0.7);
+}
+#workspaces button.empty {
+    color: #3a3d58;
+}
+
+/* accents */
+#pulseaudio.muted { color: #ff8a9b; }
+#battery.warning { color: #ffce6c; }
+#battery.critical {
+    color: #ff6c6c;
+    text-shadow: 0 0 6px #ff3b3b;
+}
+#temperature.critical {
+    color: #ff6c6c;
+    text-shadow: 0 0 6px #ff3b3b;
+}
+#idle_inhibitor.activated {
+    color: #9be0c0;
+    border-color: rgba(120, 224, 168, 0.6);
+}
+#custom-power {
+    color: #ff9aa6;
+    text-shadow: 0 0 6px rgba(255, 60, 80, 0.5);
+}
+#custom-power:hover {
+    background: linear-gradient(to bottom,
+        rgba(150, 45, 60, 0.6),
+        rgba(70, 20, 30, 0.55));
+    color: #ffd6dc;
+    border-color: rgba(255, 130, 150, 0.7);
+    box-shadow: inset 0 1.5px 0 rgba(255, 255, 255, 0.22),
+                0 0 9px rgba(255, 60, 80, 0.6);
+}
+
+tooltip {
+    background: rgba(12, 14, 28, 0.96);
+    border: 1px solid rgba(150, 162, 214, 0.65);
+    border-radius: 8px;
+}
+tooltip label {
+    color: #e6e8ff;
+}

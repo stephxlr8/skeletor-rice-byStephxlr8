@@ -1,0 +1,79 @@
+/* Skeletor metallic-glass rofi theme — matches the GlassPanel widgets + waybar.
+   Low alphas so the Hyprland compositor blur (layerrule) frosts behind it. */
+configuration {
+    /* single left-click activates the hovered row (default needs a double-click) */
+    me-select-entry: "";
+    me-accept-entry: [ "MousePrimary" ];
+}
+
+* {
+    bg-glass:  rgba(14, 16, 22, 0.42);   /* near-black, compositor blur shows through */
+    bg-cell:   rgba(30, 32, 38, 0.40);
+    bg-sel:    rgba(120, 30, 38, 0.62);
+    fg0:       #d3d4d8;
+    fg-dim:    #8a8c92;
+    silver:    #9aa0ac;
+    red:       #ff5a64;
+
+    background-color: transparent;
+    text-color:       @fg0;
+    font:             "Noto Sans Mono 12";
+}
+
+window {
+    width:            430px;
+    border:           1px;
+    border-color:     @silver;
+    border-radius:    13px;
+    background-color: @bg-glass;
+    padding:          14px;
+}
+
+mainbox {
+    spacing: 10px;
+}
+
+inputbar {
+    background-color: @bg-cell;
+    border:           1px;
+    border-color:     @red;
+    border-radius:    9px;
+    padding:          8px 12px;
+    spacing:          8px;
+    children:         [ prompt, entry ];
+}
+
+prompt {
+    text-color: @red;
+}
+
+entry {
+    placeholder:       "switch output...";
+    placeholder-color: @fg-dim;
+}
+
+listview {
+    lines:        6;
+    spacing:      6px;
+    scrollbar:    false;
+    fixed-height: false;
+}
+
+element {
+    padding:          9px 12px;
+    border-radius:    9px;
+    background-color: @bg-cell;
+    border:           1px 1px 1px 3px;
+    border-color:     rgba(255, 90, 100, 0.35);
+}
+
+element selected {
+    background-color: @bg-sel;
+    border-color:     @red;
+    text-color:       #ffeaec;
+}
+
+element-text {
+    background-color: transparent;
+    text-color:       inherit;
+}
