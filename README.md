@@ -7,7 +7,8 @@ and wallpaper-tinted rofi menus for Wi-Fi, Bluetooth and display switching.
 Tested on an ASUS laptop (AMD GPU, eDP-1 @ 1920x1200, Hyprland 0.55).
 Srry for some bugs lol.(if u find a lot of it, tell me pls)
 
-![wallpaper](wallpaper/skeletor-wallpaper.png)
+<img width="1400" height="700" alt="image" src="https://github.com/user-attachments/assets/8bac9bb6-f08c-4054-8f5b-70c11d1ceb6d" />
+
 
 ## What's inside
 
