@@ -1,11 +1,11 @@
-# 💀 Skeletor Rice
+# Skeletor Rice
 
 A skeletor goth/dark rice made by me — a gothic metallic-glass desktop for
 **Hyprland** on Arch Linux: frosted-glass Quickshell widgets, a glossy Waybar,
 and wallpaper-tinted rofi menus for Wi-Fi, Bluetooth and display switching.
 
 Tested on an ASUS laptop (AMD GPU, eDP-1 @ 1920x1200, Hyprland 0.55).
-Srry for some bugs lol.
+Srry for some bugs lol.(if u find a lot of it, tell me pls)
 
 ![wallpaper](wallpaper/skeletor-wallpaper.png)
 
@@ -70,3 +70,10 @@ Then log into Hyprland (or `hyprctl reload`).
 ## License
 
 MIT — do whatever you want.
+
+
+## *Others distros*
+
+i made this on arch but a want it to migrate to NixOS because the vulnerabilitys so if u find this rn, u can wait some wekes for the NixOS version 
+
+
